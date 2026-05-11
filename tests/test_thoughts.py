@@ -1,6 +1,5 @@
 import sys
 import os
-
 import pytest
 from freezegun import freeze_time
 from app import create_app
