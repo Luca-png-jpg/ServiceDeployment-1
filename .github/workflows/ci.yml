@@ -20,8 +20,14 @@ jobs:
           sudo chmod +x /usr/local/bin/docker-compose
           docker-compose version
 
-      - name: Start services (docker-compose)
+      - name: Start Services (docker-compose)
         run: docker-compose -f docker-compose.yml up -d
+
+      - name: Wait for PostgresqlDBMS Initialization
+        run: sleep 10
+
+      - name: Initialize Database
+        run: docker-compose -f docker-compose.yml exec microservice python init_db.py
 
       - name: Run Tests
         run: docker-compose -f docker-compose.yml exec microservice pytest
