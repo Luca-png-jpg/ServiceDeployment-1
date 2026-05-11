@@ -23,7 +23,7 @@ jobs:
       - name: Start Services (docker-compose)
         run: docker-compose -f docker-compose.yml up -d
 
-      - name: Wait for PostgresqlDBMS Initialization
+      - name: Wait for DBMS Initialization
         run: sleep 10
 
       - name: Initialize Database
