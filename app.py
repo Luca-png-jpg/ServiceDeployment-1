@@ -3,7 +3,7 @@ from flask_restx import Api
 from extensions import db
 from resources.thoughts import api as thoughts_ns
 import os
-
+# Prova
 database_url = os.environ.get("DATABASE_URL")
 
 if not database_url:
